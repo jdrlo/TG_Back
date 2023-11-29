@@ -15,4 +15,4 @@ from rest_framework import viewsets, permissions
 class SugeQuejaViewSet(viewsets.ModelViewSet):
     queryset = SugeQuejas.objects.all().order_by('-created')
     serializer_class = SugeQuejaSerializer 
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]

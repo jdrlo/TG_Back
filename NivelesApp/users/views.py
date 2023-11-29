@@ -76,9 +76,12 @@ class CreateTokenView(ObtainAuthToken):
 
 
 
+class ClienteViewSet(viewsets.ModelViewSet):
+    queryset = Clientes.objects.all()
+    serializer_class = ClienteSerializer 
+    permission_classes = [permissions.IsAuthenticated]
 
-
-class ClienteViewSet(views.APIView):
+class ClienteApiView(views.APIView):
 
     def post(self, request):
         try:
